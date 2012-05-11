@@ -1,0 +1,45 @@
+name: biometool
+version: 1.1.0
+main: com.massivecraft.biometool.P
+depend: [mcore3]
+permissions:
+  biometool.*:
+    description: all biome tool permissions
+    default: op
+    children:
+      biometool.here: true
+      biometool.list: true
+      biometool.pos1: true
+      biometool.pos1.here: true
+      biometool.pos1.coord: true
+      biometool.pos2: true
+      biometool.pos2.here: true
+      biometool.pos2.coord: true
+      biometool.convert: true
+  biometool.here:
+    description: check in what biome you stand
+    default: false
+  biometool.list:
+    description: list all available biomes
+    default: false
+  biometool.pos1:
+    description: manage first position
+    default: false
+  biometool.pos1.here:
+    description: set first position to where you are
+    default: false
+  biometool.pos1.coord:
+    description: set first position to a x,z coord
+    default: false
+  biometool.pos2:
+    description: manage second position
+    default: false
+  biometool.pos2.here:
+    description: set second position to where you are
+    default: false
+  biometool.pos2.coord:
+    description: set second position to a x,z coord
+    default: false
+  biometool.convert:
+    description: convert from all or a specific biome to a specific biome
+    default: false
