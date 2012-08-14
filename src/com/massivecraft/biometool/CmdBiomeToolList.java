@@ -5,8 +5,8 @@ import java.util.List;
 
 import net.minecraft.server.BiomeBase;
 
-import com.massivecraft.mcore3.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore3.util.Txt;
+import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore4.util.Txt;
 
 public class CmdBiomeToolList extends BiomeToolCommand
 {

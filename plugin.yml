@@ -1,7 +1,7 @@
 name: biometool
-version: 1.2.0
+version: 1.2.1
 main: com.massivecraft.biometool.P
-depend: [mcore3]
+depend: [mcore4]
 permissions:
   biometool.*:
     description: all biome tool permissions

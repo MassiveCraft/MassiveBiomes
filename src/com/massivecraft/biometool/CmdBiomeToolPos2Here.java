@@ -1,7 +1,7 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore3.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore3.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore4.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolPos2Here extends BiomeToolCommand
 {

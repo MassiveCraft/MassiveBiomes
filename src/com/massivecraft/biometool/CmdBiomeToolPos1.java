@@ -3,9 +3,9 @@ package com.massivecraft.biometool;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.massivecraft.mcore3.cmd.HelpCommand;
-import com.massivecraft.mcore3.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore3.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore4.cmd.HelpCommand;
+import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore4.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolPos1 extends BiomeToolCommand
 {

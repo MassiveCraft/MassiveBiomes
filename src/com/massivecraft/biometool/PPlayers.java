@@ -2,7 +2,7 @@ package com.massivecraft.biometool;
 
 import java.io.File;
 
-import com.massivecraft.mcore3.persist.gson.GsonPlayerEntityManager;
+import com.massivecraft.mcore4.persist.gson.GsonPlayerEntityManager;
 
 public class PPlayers extends GsonPlayerEntityManager<PPlayer>
 {
