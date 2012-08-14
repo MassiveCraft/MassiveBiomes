@@ -1,5 +1,5 @@
 name: biometool
-version: 1.1.0
+version: 1.2.0
 main: com.massivecraft.biometool.P
 depend: [mcore3]
 permissions:

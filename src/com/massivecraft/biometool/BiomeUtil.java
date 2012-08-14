@@ -26,11 +26,11 @@ public class BiomeUtil
             net.minecraft.server.Chunk chunk = craftWorld.getHandle().getChunkAtWorldCoords(x, z);
 
             if (chunk != null) {
-                byte[] biomevals = chunk.l();
+                byte[] biomevals = chunk.m();
                 biomevals[((z & 0xF) << 4) | (x & 0xF)] = (byte)bb.id;
             }
         }
-    }
+    }	
 	
 	public static void getRawBiomeId(CraftWorld craftWorld, int x, int z)
 	{
