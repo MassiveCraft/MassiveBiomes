@@ -1,5 +1,6 @@
 package com.massivecraft.biometool;
 
+import com.massivecraft.mcore4.cmd.arg.ARInteger;
 import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
 import com.massivecraft.mcore4.cmd.req.ReqIsPlayer;
 
@@ -18,10 +19,10 @@ public class CmdBiomeToolPos2Coord extends BiomeToolCommand
 	@Override
 	public void perform()
 	{
-		Integer X = this.argAs(0, Integer.class);
+		Integer X = this.arg(0, ARInteger.get());
 		if (X == null) return;
 		
-		Integer Z = this.argAs(1, Integer.class);
+		Integer Z = this.arg(1, ARInteger.get());
 		if (Z == null) return;
 		
 		pme.setX2(X);

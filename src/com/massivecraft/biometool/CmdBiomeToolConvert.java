@@ -6,6 +6,7 @@ import org.bukkit.craftbukkit.CraftWorld;
 import net.minecraft.server.BiomeBase;
 import net.minecraft.server.WorldServer;
 
+import com.massivecraft.mcore4.cmd.arg.ARInteger;
 import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
 import com.massivecraft.mcore4.cmd.req.ReqIsPlayer;
 
@@ -43,7 +44,7 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		}
 		else
 		{
-			fromId = this.argAs(0, Integer.class);
+			fromId = this.arg(0, ARInteger.get());
 			if (fromId == null) return;
 			fromBiome = BiomeBase.biomes[fromId];
 			if (fromBiome == null) {
@@ -52,7 +53,7 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 			}
 		}
 		
-		toId = this.argAs(1, Integer.class);
+		toId = this.arg(1, ARInteger.get());
 		if (toId == null) return;
 		toBiome = BiomeBase.biomes[toId];
 		if (toBiome == null) {
