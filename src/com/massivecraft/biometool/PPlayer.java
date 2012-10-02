@@ -1,16 +1,31 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore4.persist.IClassManager;
-import com.massivecraft.mcore4.persist.PlayerEntity;
+import com.massivecraft.mcore4.store.PlayerEntity;
 
 public class PPlayer extends PlayerEntity<PPlayer>
 {
 	// -------------------------------------------- //
 	// META
 	// -------------------------------------------- //
-	
-	@Override public IClassManager<PPlayer> getManager() { return PPlayers.i; }
 	@Override protected PPlayer getThis() { return this; }
+	
+	private final static transient PPlayer defaultInstance = new PPlayer();
+	@Override public PPlayer getDefaultInstance() { return defaultInstance; }
+	@Override protected Class<PPlayer> getClazz() { return PPlayer.class; }
+	
+	// -------------------------------------------- //
+	// LOAD
+	// -------------------------------------------- //
+	
+	@Override
+	public PPlayer load(PPlayer that)
+	{
+		this.x1 = that.x1;
+		this.x2 = that.x2;
+		this.z1 = that.z1;
+		this.z2 = that.z2;
+		return this;
+	}
 	
 	// -------------------------------------------- //
 	// FIELDS
