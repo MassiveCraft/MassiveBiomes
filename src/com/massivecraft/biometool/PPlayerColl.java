@@ -1,6 +1,6 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore4.store.PlayerColl;
+import com.massivecraft.mcore5.store.PlayerColl;
 
 public class PPlayerColl extends PlayerColl<PPlayer>
 {

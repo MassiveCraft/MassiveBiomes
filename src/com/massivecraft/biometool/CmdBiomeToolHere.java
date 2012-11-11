@@ -7,8 +7,8 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.CraftWorld;
 
-import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore4.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore5.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore5.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolHere extends BiomeToolCommand
 {

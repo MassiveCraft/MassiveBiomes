@@ -6,9 +6,9 @@ import org.bukkit.craftbukkit.CraftWorld;
 import net.minecraft.server.BiomeBase;
 import net.minecraft.server.WorldServer;
 
-import com.massivecraft.mcore4.cmd.arg.ARInteger;
-import com.massivecraft.mcore4.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore4.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore5.cmd.arg.ARInteger;
+import com.massivecraft.mcore5.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore5.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolConvert extends BiomeToolCommand
 {

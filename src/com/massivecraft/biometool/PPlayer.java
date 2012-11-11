@@ -1,6 +1,6 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore4.store.PlayerEntity;
+import com.massivecraft.mcore5.store.PlayerEntity;
 
 public class PPlayer extends PlayerEntity<PPlayer>
 {
