@@ -1,14 +1,13 @@
 package com.massivecraft.biometool;
 
-import org.bukkit.World;
-import org.bukkit.craftbukkit.CraftWorld;
+import java.util.Map;
 
-import net.minecraft.server.BiomeBase;
-import net.minecraft.server.WorldServer;
+import org.bukkit.World;
 
 import com.massivecraft.mcore5.cmd.arg.ARInteger;
 import com.massivecraft.mcore5.cmd.req.ReqHasPerm;
 import com.massivecraft.mcore5.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore5.util.BiomeUtil;
 
 public class CmdBiomeToolConvert extends BiomeToolCommand
 {
@@ -28,15 +27,14 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 	{
 		boolean all = false;
 		
+		Map<Integer, String> biomeIdNames = BiomeUtil.getBiomeIdNames();
 		World world = me.getWorld();
-		CraftWorld craftWorld = (CraftWorld)world;
-		WorldServer worldServer = craftWorld.getHandle();
 		
 		Integer fromId = null;
 		Integer toId = null;
 		
-		BiomeBase fromBiome = null;
-		BiomeBase toBiome = null;
+		String fromName = null;
+		String toName = null;
 		
 		if (this.arg(0).toLowerCase().startsWith("a"))
 		{
@@ -46,8 +44,9 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		{
 			fromId = this.arg(0, ARInteger.get());
 			if (fromId == null) return;
-			fromBiome = BiomeBase.biomes[fromId];
-			if (fromBiome == null) {
+			
+			fromName = biomeIdNames.get(fromId);
+			if (fromName == null) {
 				msg("<e>Invalid fromId");
 				return;
 			}
@@ -55,8 +54,8 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		
 		toId = this.arg(1, ARInteger.get());
 		if (toId == null) return;
-		toBiome = BiomeBase.biomes[toId];
-		if (toBiome == null) {
+		toName = biomeIdNames.get(toId);
+		if (toName == null) {
 			msg("<e>Invalid toId");
 			return;
 		}
@@ -68,7 +67,7 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		
 		int area = (xmax - xmin + 1) * (zmax - zmin + 1);
 		
-		msg("<i>Now converting <h>"+area+" coords to <h>"+toBiome.y+"<i>.");
+		msg("<i>Now converting <h>"+area+" coords to <h>"+toName+"<i>.");
 		
 		for (int x = xmin; x <= xmax; x++)
 		{
@@ -76,13 +75,13 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 			{
 				if ( ! all)
 				{
-					BiomeBase biomeHere = worldServer.getBiome(x, z);
-					if (biomeHere.id != fromId)
+					int biomeIdHere = BiomeUtil.getBiomeIdAt(world, x, z);
+					if (biomeIdHere != fromId)
 					{
 						continue;
 					}
 				}
-				BiomeUtil.setBiomeId(craftWorld, x, z, toId);
+				BiomeUtil.setBiomeIdAt(world, x, z, toId);
 			}
 		}
 		msg("<i>DONE");

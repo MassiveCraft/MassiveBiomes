@@ -21,7 +21,11 @@ public abstract class BiomeToolCommand extends MCommand
 	@Override
 	public void fixSenderVars()
 	{
-		this.pme = PPlayerColl.i.get(this.me);
+		this.pme = null;
+		if (this.me != null)
+		{
+			this.pme = PPlayerColl.i.get(this.me);
+		}
 	}
 	
 }

@@ -5,15 +5,6 @@ import com.massivecraft.mcore5.store.PlayerEntity;
 public class PPlayer extends PlayerEntity<PPlayer>
 {
 	// -------------------------------------------- //
-	// META
-	// -------------------------------------------- //
-	@Override protected PPlayer getThis() { return this; }
-	
-	private final static transient PPlayer defaultInstance = new PPlayer();
-	@Override public PPlayer getDefaultInstance() { return defaultInstance; }
-	@Override protected Class<PPlayer> getClazz() { return PPlayer.class; }
-	
-	// -------------------------------------------- //
 	// LOAD
 	// -------------------------------------------- //
 	
