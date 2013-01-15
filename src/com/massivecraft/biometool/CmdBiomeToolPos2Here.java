@@ -10,7 +10,7 @@ public class CmdBiomeToolPos2Here extends BiomeToolCommand
 		super();
 		this.addAliases("here");
 		this.addRequirements(new ReqHasPerm(Permission.POS2_HERE.node));
-		this.addRequirements(ReqIsPlayer.getInstance());
+		this.addRequirements(ReqIsPlayer.get());
 	}
 	
 	@Override

@@ -19,7 +19,7 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		this.addRequiredArg("toId");
 		
 		this.addRequirements(new ReqHasPerm(Permission.CONVERT.node));
-		this.addRequirements(ReqIsPlayer.getInstance());
+		this.addRequirements(ReqIsPlayer.get());
 	}
 	
 	@Override

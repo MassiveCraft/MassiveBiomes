@@ -14,7 +14,7 @@ public class CmdBiomeToolPos2 extends BiomeToolCommand
 		super();
 		this.addAliases("2", "p2", "pos2");
 		this.addRequirements(new ReqHasPerm(Permission.POS2.node));
-		this.addRequirements(ReqIsPlayer.getInstance());
+		this.addRequirements(ReqIsPlayer.get());
 		
 		this.addSubCommand(new CmdBiomeToolPos2Here());
 		this.addSubCommand(new CmdBiomeToolPos2Coord());

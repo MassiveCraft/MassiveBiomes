@@ -2,7 +2,7 @@ package com.massivecraft.biometool;
 
 import org.bukkit.command.CommandSender;
 
-import com.massivecraft.mcore5.util.Perm;
+import com.massivecraft.mcore5.util.PermUtil;
 
 public enum Permission
 {
@@ -26,7 +26,7 @@ public enum Permission
 	
 	public boolean has(CommandSender sender, boolean informSenderIfNot)
 	{
-		return Perm.has(sender, this.node, informSenderIfNot);
+		return PermUtil.has(sender, this.node, informSenderIfNot);
 	}
 	
 	public boolean has(CommandSender sender)

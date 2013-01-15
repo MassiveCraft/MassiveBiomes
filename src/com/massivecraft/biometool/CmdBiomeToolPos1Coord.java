@@ -13,7 +13,7 @@ public class CmdBiomeToolPos1Coord extends BiomeToolCommand
 		this.addRequiredArg("X");
 		this.addRequiredArg("Z");
 		this.addRequirements(new ReqHasPerm(Permission.POS1_COORD.node));
-		this.addRequirements(ReqIsPlayer.getInstance());
+		this.addRequirements(ReqIsPlayer.get());
 	}
 	
 	@Override

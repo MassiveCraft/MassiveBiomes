@@ -16,7 +16,7 @@ public class CmdBiomeToolHere extends BiomeToolCommand
 		super();
 		this.addAliases("here");
 		this.addRequirements(new ReqHasPerm(Permission.HERE.node));
-		this.addRequirements(ReqIsPlayer.getInstance());
+		this.addRequirements(ReqIsPlayer.get());
 	}
 	
 	@Override
