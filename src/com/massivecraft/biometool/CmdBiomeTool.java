@@ -1,6 +1,6 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore5.cmd.HelpCommand;
+import com.massivecraft.mcore.cmd.HelpCommand;
 
 public class CmdBiomeTool extends BiomeToolCommand
 {

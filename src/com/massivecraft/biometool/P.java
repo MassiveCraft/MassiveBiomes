@@ -1,6 +1,6 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore5.MPlugin;
+import com.massivecraft.mcore.MPlugin;
 
 public class P extends MPlugin
 {

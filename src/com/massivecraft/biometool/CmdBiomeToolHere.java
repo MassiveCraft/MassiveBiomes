@@ -5,9 +5,9 @@ import java.util.Map.Entry;
 import org.bukkit.Location;
 import org.bukkit.World;
 
-import com.massivecraft.mcore5.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore5.cmd.req.ReqIsPlayer;
-import com.massivecraft.mcore5.util.BiomeUtil;
+import com.massivecraft.mcore.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore.util.BiomeUtil;
 
 public class CmdBiomeToolHere extends BiomeToolCommand
 {

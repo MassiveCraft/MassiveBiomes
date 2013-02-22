@@ -1,7 +1,7 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore5.store.MStore;
-import com.massivecraft.mcore5.store.SenderColl;
+import com.massivecraft.mcore.store.MStore;
+import com.massivecraft.mcore.store.SenderColl;
 
 public class PPlayerColl extends SenderColl<PPlayer>
 {

@@ -4,10 +4,10 @@ import java.util.Map;
 
 import org.bukkit.World;
 
-import com.massivecraft.mcore5.cmd.arg.ARInteger;
-import com.massivecraft.mcore5.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore5.cmd.req.ReqIsPlayer;
-import com.massivecraft.mcore5.util.BiomeUtil;
+import com.massivecraft.mcore.cmd.arg.ARInteger;
+import com.massivecraft.mcore.cmd.req.ReqHasPerm;
+import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.mcore.util.BiomeUtil;
 
 public class CmdBiomeToolConvert extends BiomeToolCommand
 {
