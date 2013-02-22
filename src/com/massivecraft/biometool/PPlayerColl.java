@@ -1,8 +1,9 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore5.store.PlayerColl;
+import com.massivecraft.mcore5.store.MStore;
+import com.massivecraft.mcore5.store.SenderColl;
 
-public class PPlayerColl extends PlayerColl<PPlayer>
+public class PPlayerColl extends SenderColl<PPlayer>
 {
 	// -------------------------------------------- //
 	// META
@@ -13,7 +14,7 @@ public class PPlayerColl extends PlayerColl<PPlayer>
 	{
 		// We use default database. Nothing is saved right now.
 		// IF you decide to save stuff in the future: implement Const and ConfServer
-		super(P.p, "biometool_player", PPlayer.class); 
+		super(MStore.getDb("default"), P.p, "biometool_player", PPlayer.class);
 	}
 
 	// -------------------------------------------- //

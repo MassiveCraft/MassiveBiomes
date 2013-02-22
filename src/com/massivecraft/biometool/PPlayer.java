@@ -1,8 +1,8 @@
 package com.massivecraft.biometool;
 
-import com.massivecraft.mcore5.store.PlayerEntity;
+import com.massivecraft.mcore5.store.SenderEntity;
 
-public class PPlayer extends PlayerEntity<PPlayer>
+public class PPlayer extends SenderEntity<PPlayer>
 {
 	// -------------------------------------------- //
 	// LOAD

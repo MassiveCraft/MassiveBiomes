@@ -24,7 +24,7 @@ public class P extends MPlugin
 		
 		// Add Base Commands
 		this.cmdBiomeTool = new CmdBiomeTool();
-		this.cmdBiomeTool.register();
+		this.cmdBiomeTool.register(this);
 		
 		postEnable();
 	}
