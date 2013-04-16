@@ -14,7 +14,7 @@ public class PPlayerColl extends SenderColl<PPlayer>
 	{
 		// We use default database. Nothing is saved right now.
 		// IF you decide to save stuff in the future: implement Const and ConfServer
-		super(MStore.getDb("default"), P.p, "biometool_player", PPlayer.class);
+		super("biometool_player", PPlayer.class, MStore.getDb("default"), P.p);
 	}
 
 	// -------------------------------------------- //
