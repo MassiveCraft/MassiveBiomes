@@ -11,13 +11,23 @@ import com.massivecraft.mcore.util.BiomeUtil;
 
 public class CmdBiomeToolHere extends BiomeToolCommand
 {
+	// -------------------------------------------- //
+	// CONSTRUCT
+	// -------------------------------------------- //
+	
 	public CmdBiomeToolHere()
 	{
-		super();
+		// Aliases
 		this.addAliases("here");
-		this.addRequirements(new ReqHasPerm(Permission.HERE.node));
+		
+		// Requirements
+		this.addRequirements(new ReqHasPerm(Perm.HERE.node));
 		this.addRequirements(ReqIsPlayer.get());
 	}
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
 	
 	@Override
 	public void perform()
@@ -34,4 +44,5 @@ public class CmdBiomeToolHere extends BiomeToolCommand
 		
 		msg("<i>Biome here is <k>id <v>%s<i> and <k>Name <v>%s<i>.", id.toString(), name);
 	}
+	
 }

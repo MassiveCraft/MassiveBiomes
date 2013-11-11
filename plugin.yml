@@ -1,12 +1,32 @@
-name: biometool
-version: 1.3.0
-main: com.massivecraft.biometool.P
+main: com.massivecraft.biometool.BiomeTool
+name: BiomeTool
+version: 1.4.0
+website: http://massivecraft.com/
+authors: [Cayorion]
+description: §eBiomeTool is a small utility plugin for altering map biome data. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
 depend: [mcore]
 permissions:
+# -------------------------------------------- #
+# THE REAL NODES
+# -------------------------------------------- #
+  biometool.basecommand: {description: use biometool, default: false}
+  biometool.here: {description: check in what biome you stand, default: false}
+  biometool.list: {description: list all available biomes, default: false}
+  biometool.pos1: {description: manage pos1, default: false}
+  biometool.pos1.here: {description: set pos1 to where you stand, default: false}
+  biometool.pos1.coord: {description: set pos1 to a coord, default: false}
+  biometool.pos2: {description: manage pos2, default: false}
+  biometool.pos2.here: {description: set pos2 to where you stand, default: false}
+  biometool.pos2.coord: {description: set pos2 to a coord, default: false}
+  biometool.convert: {description: convert from all or a specific biome to a specific biome, default: false}
+  biometool.version: {description: show plugin version, default: false}
+# -------------------------------------------- #
+# STAR NOTATION
+# -------------------------------------------- #
   biometool.*:
-    description: all biome tool permissions
-    default: op
+    default: false
     children:
+      biometool.basecommand: true
       biometool.here: true
       biometool.list: true
       biometool.pos1: true
@@ -16,30 +36,41 @@ permissions:
       biometool.pos2.here: true
       biometool.pos2.coord: true
       biometool.convert: true
-  biometool.here:
-    description: check in what biome you stand
+      biometool.version: true
+# -------------------------------------------- #
+# KITS
+# -------------------------------------------- #
+  biometool.kit.op:
+    default: op
+    children:
+      biometool.*: true
+  biometool.kit.rank3:
     default: false
-  biometool.list:
-    description: list all available biomes
+    children:
+      biometool.kit.rank2: true
+      biometool.pos1: true
+      biometool.pos1.here: true
+      biometool.pos1.coord: true
+      biometool.pos2: true
+      biometool.pos2.here: true
+      biometool.pos2.coord: true
+      biometool.convert: true
+  biometool.kit.rank2:
     default: false
-  biometool.pos1:
-    description: manage first position
+    children:
+      biometool.kit.rank1: true
+  biometool.kit.rank1:
     default: false
-  biometool.pos1.here:
-    description: set first position to where you are
+    children:
+      biometool.kit.rank0: true
+  biometool.kit.rank0:
     default: false
-  biometool.pos1.coord:
-    description: set first position to a x,z coord
-    default: false
-  biometool.pos2:
-    description: manage second position
-    default: false
-  biometool.pos2.here:
-    description: set second position to where you are
-    default: false
-  biometool.pos2.coord:
-    description: set second position to a x,z coord
-    default: false
-  biometool.convert:
-    description: convert from all or a specific biome to a specific biome
-    default: false
+    children:
+      biometool.basecommand: true
+      biometool.here: true
+      biometool.list: true
+      biometool.version: true
+  biometool.kit.default:
+    default: true
+    children:
+      biometool.kit.rank0: true

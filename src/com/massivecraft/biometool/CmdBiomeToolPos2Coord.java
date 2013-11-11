@@ -6,15 +6,27 @@ import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolPos2Coord extends BiomeToolCommand
 {
+	// -------------------------------------------- //
+	// CONSTRUCT
+	// -------------------------------------------- //
+	
 	public CmdBiomeToolPos2Coord()
 	{
-		super();
+		// Aliases
 		this.addAliases("coord");
+		
+		// Args
 		this.addRequiredArg("X");
 		this.addRequiredArg("Z");
-		this.addRequirements(new ReqHasPerm(Permission.POS2_COORD.node));
+		
+		// Requirements
+		this.addRequirements(new ReqHasPerm(Perm.POS2_COORD.node));
 		this.addRequirements(ReqIsPlayer.get());
 	}
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
 	
 	@Override
 	public void perform()
@@ -25,8 +37,9 @@ public class CmdBiomeToolPos2Coord extends BiomeToolCommand
 		Integer Z = this.arg(1, ARInteger.get());
 		if (Z == null) return;
 		
-		pme.setX2(X);
-		pme.setZ2(Z);
+		mme.setX2(X);
+		mme.setZ2(Z);
 		msg("<i>DONE");
 	}
+	
 }

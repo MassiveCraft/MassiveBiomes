@@ -11,13 +11,25 @@ import com.massivecraft.mcore.util.Txt;
 
 public class CmdBiomeToolList extends BiomeToolCommand
 {
+	// -------------------------------------------- //
+	// CONSTRUCT
+	// -------------------------------------------- //
+	
 	public CmdBiomeToolList()
 	{
-		super();
+		// Aliases
 		this.addAliases("l","ls","list");
+		
+		// Args
 		this.addOptionalArg("page", "1");
-		this.addRequirements(new ReqHasPerm(Permission.LIST.node));
+		
+		// Requirements
+		this.addRequirements(new ReqHasPerm(Perm.LIST.node));
 	}
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
 	
 	@Override
 	public void perform()
@@ -31,4 +43,5 @@ public class CmdBiomeToolList extends BiomeToolCommand
 		}
 		this.sendMessage(Txt.getPage(Txt.parseWrap(Txt.implodeCommaAndDot(infors, "<i>")), pageHumanBased, "Biome List", sender));
 	}
+	
 }

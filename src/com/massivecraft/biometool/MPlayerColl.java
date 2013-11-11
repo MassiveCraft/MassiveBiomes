@@ -3,28 +3,28 @@ package com.massivecraft.biometool;
 import com.massivecraft.mcore.store.MStore;
 import com.massivecraft.mcore.store.SenderColl;
 
-public class PPlayerColl extends SenderColl<PPlayer>
+public class MPlayerColl extends SenderColl<MPlayer>
 {
 	// -------------------------------------------- //
-	// META
+	// INSTANCE & CONSTRUCT
 	// -------------------------------------------- //
 	
-	public static PPlayerColl i = new PPlayerColl();
-	private PPlayerColl()
+	private static MPlayerColl i = new MPlayerColl();
+	public static MPlayerColl get() { return i; }
+	private MPlayerColl()
 	{
-		// We use default database. Nothing is saved right now.
-		// IF you decide to save stuff in the future: implement Const and ConfServer
-		super("biometool_player", PPlayer.class, MStore.getDb("default"), P.p);
+		super("biometool_mplayer", MPlayer.class, MStore.getDb(), BiomeTool.get());
 	}
 
 	// -------------------------------------------- //
-	// EXTRAS
+	// OVERRIDE
 	// -------------------------------------------- //
 
 	@Override
-	public boolean isDefault(PPlayer entity)
+	public boolean isDefault(MPlayer entity)
 	{
 		// always default => never save
 		return true;
 	}
+	
 }

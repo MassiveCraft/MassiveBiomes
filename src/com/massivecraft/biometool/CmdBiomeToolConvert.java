@@ -11,16 +11,27 @@ import com.massivecraft.mcore.util.BiomeUtil;
 
 public class CmdBiomeToolConvert extends BiomeToolCommand
 {
+	// -------------------------------------------- //
+	// CONSTRUCT
+	// -------------------------------------------- //
+	
 	public CmdBiomeToolConvert()
 	{
-		super();
+		// Aliases
 		this.addAliases("convert");
+		
+		// Args
 		this.addRequiredArg("fromId|all");
 		this.addRequiredArg("toId");
 		
-		this.addRequirements(new ReqHasPerm(Permission.CONVERT.node));
+		// Requirements
+		this.addRequirements(new ReqHasPerm(Perm.CONVERT.node));
 		this.addRequirements(ReqIsPlayer.get());
 	}
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
 	
 	@Override
 	public void perform()
@@ -60,10 +71,10 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 			return;
 		}
 		
-		int xmin = pme.getXMin();
-		int xmax = pme.getXMax();
-		int zmin = pme.getZMin();
-		int zmax = pme.getZMax();
+		int xmin = mme.getXMin();
+		int xmax = mme.getXMax();
+		int zmin = mme.getZMin();
+		int zmax = mme.getZMax();
 		
 		int area = (xmax - xmin + 1) * (zmax - zmin + 1);
 		
@@ -86,4 +97,5 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		}
 		msg("<i>DONE");
 	}
+	
 }

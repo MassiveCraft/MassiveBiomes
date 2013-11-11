@@ -3,37 +3,46 @@ package com.massivecraft.biometool;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.massivecraft.mcore.cmd.HelpCommand;
 import com.massivecraft.mcore.cmd.req.ReqHasPerm;
 import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolPos2 extends BiomeToolCommand
 {
+	// -------------------------------------------- //
+	// CONSTANTS
+	// -------------------------------------------- //
+	
+	public final static String FIRST_HELP_LINE = "<i>Manage the second position from here.";
+	
+	// -------------------------------------------- //
+	// CONSTRUCT
+	// -------------------------------------------- //
+	
 	public CmdBiomeToolPos2()
 	{
-		super();
-		this.addAliases("2", "p2", "pos2");
-		this.addRequirements(new ReqHasPerm(Permission.POS2.node));
-		this.addRequirements(ReqIsPlayer.get());
-		
+		// SubCommands
 		this.addSubCommand(new CmdBiomeToolPos2Here());
 		this.addSubCommand(new CmdBiomeToolPos2Coord());
+		
+		// Aliases
+		this.addAliases("2", "p2", "pos2");
+		
+		// Requirements
+		this.addRequirements(new ReqHasPerm(Perm.POS2.node));
+		this.addRequirements(ReqIsPlayer.get());
 	}
 	
-	protected final static String firstHelpLine = "<i>Manage the second position from here.";
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
+	
 	@Override
 	public List<String> getHelp()
 	{
 		List<String> ret = new ArrayList<String>(2);
-		ret.add(firstHelpLine);
-		ret.add("<i>Currently <k>X<v>"+pme.x2+" <k>Z<v>"+pme.z2);
+		ret.add(FIRST_HELP_LINE);
+		ret.add("<i>Currently <k>X<v>"+mme.x2+" <k>Z<v>"+mme.z2);
 		return ret;
 	}
 	
-	@Override
-	public void perform()
-	{
-		this.getCommandChain().add(this);
-		HelpCommand.getInstance().execute(this.sender, this.args, this.commandChain);
-	}
 }

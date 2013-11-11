@@ -2,22 +2,8 @@ package com.massivecraft.biometool;
 
 import com.massivecraft.mcore.store.SenderEntity;
 
-public class PPlayer extends SenderEntity<PPlayer>
+public class MPlayer extends SenderEntity<MPlayer>
 {
-	// -------------------------------------------- //
-	// LOAD
-	// -------------------------------------------- //
-	
-	@Override
-	public PPlayer load(PPlayer that)
-	{
-		this.x1 = that.x1;
-		this.x2 = that.x2;
-		this.z1 = that.z1;
-		this.z2 = that.z2;
-		return this;
-	}
-	
 	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //
@@ -43,4 +29,5 @@ public class PPlayer extends SenderEntity<PPlayer>
 	public int getXMax() { return Math.max(x1, x2); }
 	public int getZMin() { return Math.min(z1, z2); }
 	public int getZMax() { return Math.max(z1, z2); }
+	
 }

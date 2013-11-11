@@ -5,19 +5,30 @@ import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
 
 public class CmdBiomeToolPos2Here extends BiomeToolCommand
 {
+	// -------------------------------------------- //
+	// CONSTRUCT
+	// -------------------------------------------- //
+	
 	public CmdBiomeToolPos2Here()
 	{
-		super();
+		// Aliases
 		this.addAliases("here");
-		this.addRequirements(new ReqHasPerm(Permission.POS2_HERE.node));
+		
+		// Requirements
+		this.addRequirements(new ReqHasPerm(Perm.POS2_HERE.node));
 		this.addRequirements(ReqIsPlayer.get());
 	}
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
 	
 	@Override
 	public void perform()
 	{
-		pme.setX2(me.getLocation().getBlockX());
-		pme.setZ2(me.getLocation().getBlockZ());
+		mme.setX2(me.getLocation().getBlockX());
+		mme.setZ2(me.getLocation().getBlockZ());
 		msg("<i>DONE");
 	}
+	
 }

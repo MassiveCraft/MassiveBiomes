@@ -4,11 +4,20 @@ import com.massivecraft.mcore.cmd.MCommand;
 
 public abstract class BiomeToolCommand extends MCommand
 {
-	public PPlayer pme;
+	// -------------------------------------------- //
+	// FIELDS
+	// -------------------------------------------- //
+	
+	public MPlayer mme;
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
 	
 	@Override
 	public void fixSenderVars()
 	{
-		this.pme = PPlayerColl.i.get(this.sender);
+		this.mme = MPlayerColl.get().get(this.sender);
 	}
+	
 }
