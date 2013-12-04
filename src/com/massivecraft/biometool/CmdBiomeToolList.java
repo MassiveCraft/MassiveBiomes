@@ -34,14 +34,21 @@ public class CmdBiomeToolList extends BiomeToolCommand
 	@Override
 	public void perform()
 	{
+		// Args
 		Integer pageHumanBased = this.arg(0, ARInteger.get(), 1);
 		if (pageHumanBased == null) return;
-		List<String> infors = new ArrayList<String>();
-		for (Entry<Integer, String> idAndName : BiomeUtil.getBiomeIdNames().entrySet())
+		
+		// Create Lines
+		List<String> lines = new ArrayList<String>();
+		for (Entry<Integer, String> entry : BiomeUtil.getBiomeIdNames().entrySet())
 		{
-			infors.add("<k>"+idAndName.getKey()+" <v>"+idAndName.getValue());
+			Integer id = entry.getKey();
+			String name = entry.getValue();
+			String line = Txt.parse("<k>%d <v>%s", id, name);
+			lines.add(line);
 		}
-		this.sendMessage(Txt.getPage(Txt.parseWrap(Txt.implodeCommaAndDot(infors, "<i>")), pageHumanBased, "Biome List", sender));
+		
+		this.sendMessage(Txt.getPage(lines, pageHumanBased, "Biome List", sender));
 	}
 	
 }
