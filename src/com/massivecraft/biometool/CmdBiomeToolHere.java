@@ -1,13 +1,11 @@
 package com.massivecraft.biometool;
 
-import java.util.Map.Entry;
-
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.block.Biome;
 
 import com.massivecraft.mcore.cmd.req.ReqHasPerm;
 import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
-import com.massivecraft.mcore.util.BiomeUtil;
 
 public class CmdBiomeToolHere extends BiomeToolCommand
 {
@@ -38,9 +36,10 @@ public class CmdBiomeToolHere extends BiomeToolCommand
 		int x = loc.getBlockX();
 		int z = loc.getBlockZ();
 		
-		Entry<Integer, String> idAndName = BiomeUtil.getBiomeIdAndNameAt(world, x, z);
-		Integer id = idAndName.getKey();
-		String name = idAndName.getValue();
+		Biome biome = world.getBiome(x, z);
+		
+		Integer id = biome.ordinal();
+		String name = biome.toString();
 		
 		msg("<i>Biome here is <k>id <v>%s<i> and <k>Name <v>%s<i>.", id.toString(), name);
 	}

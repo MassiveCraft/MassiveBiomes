@@ -1,13 +1,11 @@
 package com.massivecraft.biometool;
 
-import java.util.Map;
-
 import org.bukkit.World;
+import org.bukkit.block.Biome;
 
-import com.massivecraft.mcore.cmd.arg.ARInteger;
+import com.massivecraft.mcore.cmd.arg.ARBiome;
 import com.massivecraft.mcore.cmd.req.ReqHasPerm;
 import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
-import com.massivecraft.mcore.util.BiomeUtil;
 
 public class CmdBiomeToolConvert extends BiomeToolCommand
 {
@@ -36,16 +34,11 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 	@Override
 	public void perform()
 	{
+		World world = me.getWorld();
 		boolean all = false;
 		
-		Map<Integer, String> biomeIdNames = BiomeUtil.getBiomeIdNames();
-		World world = me.getWorld();
-		
-		Integer fromId = null;
-		Integer toId = null;
-		
-		String fromName = null;
-		String toName = null;
+		Biome from = null;
+		Biome to = null;
 		
 		if (this.arg(0).toLowerCase().startsWith("a"))
 		{
@@ -53,23 +46,12 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		}
 		else
 		{
-			fromId = this.arg(0, ARInteger.get());
-			if (fromId == null) return;
-			
-			fromName = biomeIdNames.get(fromId);
-			if (fromName == null) {
-				msg("<e>Invalid fromId");
-				return;
-			}
+			from = this.arg(0, ARBiome.get());
+			if (from == null) return;
 		}
 		
-		toId = this.arg(1, ARInteger.get());
-		if (toId == null) return;
-		toName = biomeIdNames.get(toId);
-		if (toName == null) {
-			msg("<e>Invalid toId");
-			return;
-		}
+		to = this.arg(1, ARBiome.get());
+		if (to == null) return;
 		
 		int xmin = mme.getXMin();
 		int xmax = mme.getXMax();
@@ -78,7 +60,7 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 		
 		int area = (xmax - xmin + 1) * (zmax - zmin + 1);
 		
-		msg("<i>Now converting <h>"+area+" coords to <h>"+toName+"<i>.");
+		msg("<i>Now converting <h>" + area + " coords to <h>" + to + "<i>.");
 		
 		for (int x = xmin; x <= xmax; x++)
 		{
@@ -86,13 +68,13 @@ public class CmdBiomeToolConvert extends BiomeToolCommand
 			{
 				if ( ! all)
 				{
-					int biomeIdHere = BiomeUtil.getBiomeIdAt(world, x, z);
-					if (biomeIdHere != fromId)
+					Biome biomeHere = world.getBiome(x, z);
+					if (biomeHere != from)
 					{
 						continue;
 					}
 				}
-				BiomeUtil.setBiomeIdAt(world, x, z, toId);
+				world.setBiome(x, z, to);
 			}
 		}
 		msg("<i>DONE");

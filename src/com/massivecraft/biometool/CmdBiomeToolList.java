@@ -2,11 +2,11 @@ package com.massivecraft.biometool;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map.Entry;
+
+import org.bukkit.block.Biome;
 
 import com.massivecraft.mcore.cmd.arg.ARInteger;
 import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.util.BiomeUtil;
 import com.massivecraft.mcore.util.Txt;
 
 public class CmdBiomeToolList extends BiomeToolCommand
@@ -40,10 +40,11 @@ public class CmdBiomeToolList extends BiomeToolCommand
 		
 		// Create Lines
 		List<String> lines = new ArrayList<String>();
-		for (Entry<Integer, String> entry : BiomeUtil.getBiomeIdNames().entrySet())
+		
+		for (Biome biome : Biome.values())
 		{
-			Integer id = entry.getKey();
-			String name = entry.getValue();
+			Integer id = biome.ordinal();
+			String name = biome.toString();
 			String line = Txt.parse("<k>%d <v>%s", id, name);
 			lines.add(line);
 		}
