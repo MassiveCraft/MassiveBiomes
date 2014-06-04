@@ -1,19 +1,19 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 
-import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
 
-public class CmdBiomeToolHere extends BiomeToolCommand
+public class CmdBiomeHere extends MassiveBiomesCommand
 {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	public CmdBiomeToolHere()
+	public CmdBiomeHere()
 	{
 		// Aliases
 		this.addAliases("here");

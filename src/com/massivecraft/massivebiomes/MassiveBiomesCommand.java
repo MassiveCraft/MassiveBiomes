@@ -1,8 +1,8 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
-import com.massivecraft.mcore.cmd.MCommand;
+import com.massivecraft.massivecore.cmd.MassiveCommand;
 
-public abstract class BiomeToolCommand extends MCommand
+public abstract class MassiveBiomesCommand extends MassiveCommand
 {
 	// -------------------------------------------- //
 	// FIELDS

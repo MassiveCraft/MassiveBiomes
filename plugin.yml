@@ -1,76 +1,76 @@
-main: com.massivecraft.biometool.BiomeTool
-name: BiomeTool
+main: com.massivecraft.massivebiomes.MassiveBiomes
+name: MassiveBiomes
 version: 1.5.0
 website: http://massivecraft.com/
 authors: [Cayorion]
-description: §eBiomeTool is a small utility plugin for altering map biome data. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
-depend: [mcore]
+description: §eMassiveBiomes is a small utility plugin for altering map biome data. §aCayorion §efrom the minecraft server §aMassiveCraft §eis the lead programmer. Feel free to visit us at §bhttp://massivecraft.com
+depend: [MassiveCore]
 permissions:
 # -------------------------------------------- #
 # THE REAL NODES
 # -------------------------------------------- #
-  biometool.basecommand: {description: use biometool, default: false}
-  biometool.here: {description: check in what biome you stand, default: false}
-  biometool.list: {description: list all available biomes, default: false}
-  biometool.pos1: {description: manage pos1, default: false}
-  biometool.pos1.here: {description: set pos1 to where you stand, default: false}
-  biometool.pos1.coord: {description: set pos1 to a coord, default: false}
-  biometool.pos2: {description: manage pos2, default: false}
-  biometool.pos2.here: {description: set pos2 to where you stand, default: false}
-  biometool.pos2.coord: {description: set pos2 to a coord, default: false}
-  biometool.convert: {description: convert from all or a specific biome to a specific biome, default: false}
-  biometool.version: {description: show plugin version, default: false}
+  massivebiomes.basecommand: {description: use MassiveBiomes, default: false}
+  massivebiomes.here: {description: check in what biome you stand, default: false}
+  massivebiomes.list: {description: list all available biomes, default: false}
+  massivebiomes.pos1: {description: manage pos1, default: false}
+  massivebiomes.pos1.here: {description: set pos1 to where you stand, default: false}
+  massivebiomes.pos1.coord: {description: set pos1 to a coord, default: false}
+  massivebiomes.pos2: {description: manage pos2, default: false}
+  massivebiomes.pos2.here: {description: set pos2 to where you stand, default: false}
+  massivebiomes.pos2.coord: {description: set pos2 to a coord, default: false}
+  massivebiomes.convert: {description: convert from all or a specific biome to a specific biome, default: false}
+  massivebiomes.version: {description: show plugin version, default: false}
 # -------------------------------------------- #
 # STAR NOTATION
 # -------------------------------------------- #
-  biometool.*:
+  massivebiomes.*:
     default: false
     children:
-      biometool.basecommand: true
-      biometool.here: true
-      biometool.list: true
-      biometool.pos1: true
-      biometool.pos1.here: true
-      biometool.pos1.coord: true
-      biometool.pos2: true
-      biometool.pos2.here: true
-      biometool.pos2.coord: true
-      biometool.convert: true
-      biometool.version: true
+      massivebiomes.basecommand: true
+      massivebiomes.here: true
+      massivebiomes.list: true
+      massivebiomes.pos1: true
+      massivebiomes.pos1.here: true
+      massivebiomes.pos1.coord: true
+      massivebiomes.pos2: true
+      massivebiomes.pos2.here: true
+      massivebiomes.pos2.coord: true
+      massivebiomes.convert: true
+      massivebiomes.version: true
 # -------------------------------------------- #
 # KITS
 # -------------------------------------------- #
-  biometool.kit.op:
+  massivebiomes.kit.op:
     default: op
     children:
-      biometool.*: true
-  biometool.kit.rank3:
+      massivebiomes.*: true
+  massivebiomes.kit.rank3:
     default: false
     children:
-      biometool.kit.rank2: true
-      biometool.pos1: true
-      biometool.pos1.here: true
-      biometool.pos1.coord: true
-      biometool.pos2: true
-      biometool.pos2.here: true
-      biometool.pos2.coord: true
-      biometool.convert: true
-  biometool.kit.rank2:
+      massivebiomes.kit.rank2: true
+      massivebiomes.pos1: true
+      massivebiomes.pos1.here: true
+      massivebiomes.pos1.coord: true
+      massivebiomes.pos2: true
+      massivebiomes.pos2.here: true
+      massivebiomes.pos2.coord: true
+      massivebiomes.convert: true
+  massivebiomes.kit.rank2:
     default: false
     children:
-      biometool.kit.rank1: true
-  biometool.kit.rank1:
+      massivebiomes.kit.rank1: true
+  massivebiomes.kit.rank1:
     default: false
     children:
-      biometool.kit.rank0: true
-  biometool.kit.rank0:
+      massivebiomes.kit.rank0: true
+  massivebiomes.kit.rank0:
     default: false
     children:
-      biometool.basecommand: true
-      biometool.here: true
-      biometool.list: true
-      biometool.version: true
-  biometool.kit.default:
+      massivebiomes.basecommand: true
+      massivebiomes.here: true
+      massivebiomes.list: true
+      massivebiomes.version: true
+  massivebiomes.kit.default:
     default: true
     children:
-      biometool.kit.rank0: true
+      massivebiomes.kit.rank0: true

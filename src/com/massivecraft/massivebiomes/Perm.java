@@ -1,8 +1,8 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
 import org.bukkit.command.CommandSender;
 
-import com.massivecraft.mcore.util.PermUtil;
+import com.massivecraft.massivecore.util.PermUtil;
 
 public enum Perm
 {
@@ -37,7 +37,7 @@ public enum Perm
 	
 	Perm(final String node)
 	{
-		this.node = "biometool."+node;
+		this.node = "massivebiomes."+node;
     }
 	
 	// -------------------------------------------- //

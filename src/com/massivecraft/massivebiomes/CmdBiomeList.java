@@ -1,21 +1,21 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.block.Biome;
 
-import com.massivecraft.mcore.cmd.arg.ARInteger;
-import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.util.Txt;
+import com.massivecraft.massivecore.cmd.arg.ARInteger;
+import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.util.Txt;
 
-public class CmdBiomeToolList extends BiomeToolCommand
+public class CmdBiomeList extends MassiveBiomesCommand
 {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	public CmdBiomeToolList()
+	public CmdBiomeList()
 	{
 		// Aliases
 		this.addAliases("l","ls","list");

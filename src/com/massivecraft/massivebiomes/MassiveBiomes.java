@@ -1,23 +1,23 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
-import com.massivecraft.mcore.MPlugin;
+import com.massivecraft.massivecore.MassivePlugin;
 
-public class BiomeTool extends MPlugin
+public class MassiveBiomes extends MassivePlugin
 {
 	// -------------------------------------------- //
 	// INSTANCE & CONSTRUCT
 	// -------------------------------------------- //
 	
-	private static BiomeTool i;
-	public static BiomeTool get() { return i; }
-	public BiomeTool() { BiomeTool.i = this; }
+	private static MassiveBiomes i;
+	public static MassiveBiomes get() { return i; }
+	public MassiveBiomes() { MassiveBiomes.i = this; }
     
 	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //
     
 	// Commands
-	public CmdBiomeTool cmdBiomeTool;
+	public CmdBiome cmdBiome;
 	
 	// -------------------------------------------- //
 	// OVERRIDE
@@ -32,8 +32,8 @@ public class BiomeTool extends MPlugin
 		MPlayerColl.get().init();
 		
 		// Commands
-		this.cmdBiomeTool = new CmdBiomeTool();
-		this.cmdBiomeTool.register();
+		this.cmdBiome = new CmdBiome();
+		this.cmdBiome.register();
 		
 		postEnable();
 	}

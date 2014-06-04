@@ -1,21 +1,21 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
-import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
 
-public class CmdBiomeToolPos1Here extends BiomeToolCommand
+public class CmdBiomePos2Here extends MassiveBiomesCommand
 {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	public CmdBiomeToolPos1Here()
+	public CmdBiomePos2Here()
 	{
 		// Aliases
 		this.addAliases("here");
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.POS1_HERE.node));
+		this.addRequirements(new ReqHasPerm(Perm.POS2_HERE.node));
 		this.addRequirements(ReqIsPlayer.get());
 	}
 	
@@ -26,8 +26,8 @@ public class CmdBiomeToolPos1Here extends BiomeToolCommand
 	@Override
 	public void perform()
 	{
-		mme.setX1(me.getLocation().getBlockX());
-		mme.setZ1(me.getLocation().getBlockZ());
+		mme.setX2(me.getLocation().getBlockX());
+		mme.setZ2(me.getLocation().getBlockZ());
 		msg("<i>DONE");
 	}
 	

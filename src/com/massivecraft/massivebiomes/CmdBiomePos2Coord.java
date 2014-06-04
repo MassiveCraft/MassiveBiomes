@@ -1,16 +1,16 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
-import com.massivecraft.mcore.cmd.arg.ARInteger;
-import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.arg.ARInteger;
+import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
 
-public class CmdBiomeToolPos2Coord extends BiomeToolCommand
+public class CmdBiomePos2Coord extends MassiveBiomesCommand
 {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	public CmdBiomeToolPos2Coord()
+	public CmdBiomePos2Coord()
 	{
 		// Aliases
 		this.addAliases("coord");

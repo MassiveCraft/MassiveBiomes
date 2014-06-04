@@ -1,19 +1,19 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 
-import com.massivecraft.mcore.cmd.arg.ARBiome;
-import com.massivecraft.mcore.cmd.req.ReqHasPerm;
-import com.massivecraft.mcore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.arg.ARBiome;
+import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
 
-public class CmdBiomeToolConvert extends BiomeToolCommand
+public class CmdBiomeConvert extends MassiveBiomesCommand
 {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	public CmdBiomeToolConvert()
+	public CmdBiomeConvert()
 	{
 		// Aliases
 		this.addAliases("convert");

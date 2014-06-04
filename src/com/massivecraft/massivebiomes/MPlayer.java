@@ -1,6 +1,6 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
-import com.massivecraft.mcore.store.SenderEntity;
+import com.massivecraft.massivecore.store.SenderEntity;
 
 public class MPlayer extends SenderEntity<MPlayer>
 {

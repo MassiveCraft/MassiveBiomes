@@ -1,7 +1,7 @@
-package com.massivecraft.biometool;
+package com.massivecraft.massivebiomes;
 
-import com.massivecraft.mcore.store.MStore;
-import com.massivecraft.mcore.store.SenderColl;
+import com.massivecraft.massivecore.store.MStore;
+import com.massivecraft.massivecore.store.SenderColl;
 
 public class MPlayerColl extends SenderColl<MPlayer>
 {
@@ -13,7 +13,7 @@ public class MPlayerColl extends SenderColl<MPlayer>
 	public static MPlayerColl get() { return i; }
 	private MPlayerColl()
 	{
-		super("biometool_mplayer", MPlayer.class, MStore.getDb(), BiomeTool.get());
+		super("massivebiomes_mplayer", MPlayer.class, MStore.getDb(), MassiveBiomes.get());
 	}
 
 	// -------------------------------------------- //
