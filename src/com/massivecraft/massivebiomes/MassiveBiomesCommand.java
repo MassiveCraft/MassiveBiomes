@@ -20,4 +20,10 @@ public abstract class MassiveBiomesCommand extends MassiveCommand
 		this.mme = MPlayerColl.get().get(this.sender);
 	}
 	
+	@Override
+	public void unsetSenderVars()
+	{
+		this.mme = null;
+	}
+	
 }
