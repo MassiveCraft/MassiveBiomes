@@ -33,7 +33,7 @@ public class MassiveBiomes extends MassivePlugin
 		
 		// Commands
 		this.cmdBiome = new CmdBiome();
-		this.cmdBiome.register();
+		this.cmdBiome.register(this);
 		
 		postEnable();
 	}
