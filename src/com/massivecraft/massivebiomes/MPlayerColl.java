@@ -17,6 +17,16 @@ public class MPlayerColl extends SenderColl<MPlayer>
 	}
 
 	// -------------------------------------------- //
+	// STACK TRACEABILITY
+	// -------------------------------------------- //
+	
+	@Override
+	public void onTick()
+	{
+		super.onTick();
+	}
+	
+	// -------------------------------------------- //
 	// OVERRIDE
 	// -------------------------------------------- //
 
