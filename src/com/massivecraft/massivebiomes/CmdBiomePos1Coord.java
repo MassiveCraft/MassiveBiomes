@@ -1,5 +1,6 @@
 package com.massivecraft.massivebiomes;
 
+import com.massivecraft.massivecore.cmd.MassiveCommandException;
 import com.massivecraft.massivecore.cmd.arg.ARInteger;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
@@ -29,13 +30,10 @@ public class CmdBiomePos1Coord extends MassiveBiomesCommand
 	// -------------------------------------------- //
 	
 	@Override
-	public void perform()
+	public void perform() throws MassiveCommandException
 	{
 		Integer X = this.arg(0, ARInteger.get());
-		if (X == null) return;
-		
 		Integer Z = this.arg(1, ARInteger.get());
-		if (Z == null) return;
 		
 		mme.setX1(X);
 		mme.setZ1(Z);

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.block.Biome;
 
+import com.massivecraft.massivecore.cmd.MassiveCommandException;
 import com.massivecraft.massivecore.cmd.arg.ARInteger;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.util.Txt;
@@ -32,11 +33,10 @@ public class CmdBiomeList extends MassiveBiomesCommand
 	// -------------------------------------------- //
 	
 	@Override
-	public void perform()
+	public void perform() throws MassiveCommandException
 	{
 		// Args
 		Integer pageHumanBased = this.arg(0, ARInteger.get(), 1);
-		if (pageHumanBased == null) return;
 		
 		// Create Lines
 		List<String> lines = new ArrayList<String>();
