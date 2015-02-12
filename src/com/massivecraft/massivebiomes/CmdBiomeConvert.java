@@ -3,7 +3,7 @@ package com.massivecraft.massivebiomes;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 
-import com.massivecraft.massivecore.cmd.MassiveCommandException;
+import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.cmd.arg.ARBiome;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
@@ -33,7 +33,7 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 	// -------------------------------------------- //
 	
 	@Override
-	public void perform() throws MassiveCommandException
+	public void perform() throws MassiveException
 	{
 		World world = me.getWorld();
 		boolean all = false;
