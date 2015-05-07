@@ -22,7 +22,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 		this.addAliases("l","ls","list");
 		
 		// Args
-		this.addOptionalArg("page", "1");
+		this.addArg(ARInteger.get(), "page", "1");
 		
 		// Requirements
 		this.addRequirements(new ReqHasPerm(Perm.LIST.node));
@@ -36,7 +36,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 	public void perform() throws MassiveException
 	{
 		// Args
-		Integer pageHumanBased = this.arg(0, ARInteger.get(), 1);
+		int pageHumanBased = this.readArg(1);
 		
 		// Create Lines
 		List<String> lines = new ArrayList<String>();

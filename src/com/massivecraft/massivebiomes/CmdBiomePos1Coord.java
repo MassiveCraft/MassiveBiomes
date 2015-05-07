@@ -17,8 +17,8 @@ public class CmdBiomePos1Coord extends MassiveBiomesCommand
 		this.addAliases("coord");
 		
 		// Args
-		this.addRequiredArg("X");
-		this.addRequiredArg("Z");
+		this.addArg(ARInteger.get(), "X");
+		this.addArg(ARInteger.get(), "Z");
 		
 		// Requirements
 		this.addRequirements(new ReqHasPerm(Perm.POS1_COORD.node));
@@ -32,8 +32,8 @@ public class CmdBiomePos1Coord extends MassiveBiomesCommand
 	@Override
 	public void perform() throws MassiveException
 	{
-		Integer X = this.arg(0, ARInteger.get());
-		Integer Z = this.arg(1, ARInteger.get());
+		int X = this.readArg();
+		int Z = this.readArg();
 		
 		mme.setX1(X);
 		mme.setZ1(Z);
