@@ -6,7 +6,7 @@ import java.util.List;
 import org.bukkit.block.Biome;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.arg.ARInteger;
+import com.massivecraft.massivecore.cmd.ArgSetting;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.util.Txt;
 
@@ -22,7 +22,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 		this.addAliases("l","ls","list");
 		
 		// Args
-		this.addArg(ARInteger.get(), "page", "1");
+		this.addArg(ArgSetting.getPage());
 		
 		// Requirements
 		this.addRequirements(new ReqHasPerm(Perm.LIST.node));
@@ -36,7 +36,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 	public void perform() throws MassiveException
 	{
 		// Args
-		int pageHumanBased = this.readArg(1);
+		int page = this.readArg();
 		
 		// Create Lines
 		List<String> lines = new ArrayList<String>();
@@ -49,7 +49,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 			lines.add(line);
 		}
 		
-		this.sendMessage(Txt.getPage(lines, pageHumanBased, "Biome List", sender));
+		this.sendMessage(Txt.getPage(lines, page, "Biome List", sender));
 	}
 	
 }
