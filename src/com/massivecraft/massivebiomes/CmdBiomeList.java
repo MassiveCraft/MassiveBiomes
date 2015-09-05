@@ -1,13 +1,14 @@
 package com.massivecraft.massivebiomes;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import org.bukkit.block.Biome;
 
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.cmd.ArgSetting;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.pager.Pager;
+import com.massivecraft.massivecore.pager.Stringifier;
 import com.massivecraft.massivecore.util.Txt;
 
 public class CmdBiomeList extends MassiveBiomesCommand
@@ -38,18 +39,20 @@ public class CmdBiomeList extends MassiveBiomesCommand
 		// Args
 		int page = this.readArg();
 		
-		// Create Lines
-		List<String> lines = new ArrayList<String>();
-		
-		for (Biome biome : Biome.values())
+		// Pager Create
+		Pager<Biome> pager = new Pager<Biome>(this, "Biome List", page, Arrays.asList(Biome.values()), new Stringifier<Biome>()
 		{
-			Integer id = biome.ordinal();
-			String name = biome.toString();
-			String line = Txt.parse("<k>%d <v>%s", id, name);
-			lines.add(line);
-		}
+			@Override
+			public String toString(Biome biome, int index)
+			{
+				Integer id = biome.ordinal();
+				String name = biome.toString();
+				return Txt.parse("<k>%d <v>%s", id, name);
+			}
+		});
 		
-		this.message(Txt.getPage(lines, page, "Biome List", this));
+		// Pager Message
+		pager.message();
 	}
 	
 }
