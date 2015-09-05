@@ -49,7 +49,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 			lines.add(line);
 		}
 		
-		this.message(Txt.getPage(lines, page, "Biome List", sender));
+		this.message(Txt.getPage(lines, page, "Biome List", this));
 	}
 	
 }
