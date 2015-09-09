@@ -1,6 +1,5 @@
 package com.massivecraft.massivebiomes;
 
-import com.massivecraft.massivecore.cmd.HelpCommand;
 import com.massivecraft.massivecore.cmd.VersionCommand;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 
@@ -24,7 +23,6 @@ public class CmdBiome extends MassiveBiomesCommand
 	public CmdBiome()
 	{
 		// SubCommands
-		this.addSubCommand(HelpCommand.get());
 		this.addSubCommand(this.cmdBiomeHere);
 		this.addSubCommand(this.cmdBiomeList);
 		this.addSubCommand(this.cmdBiomePos1);
