@@ -20,7 +20,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 	public CmdBiomeList()
 	{
 		// Aliases
-		this.addAliases("l","ls","list");
+		this.addAliases("list");
 		
 		// Parameters
 		this.addParameter(Parameter.getPage());
