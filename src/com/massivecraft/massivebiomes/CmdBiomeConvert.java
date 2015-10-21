@@ -4,10 +4,10 @@ import org.bukkit.World;
 import org.bukkit.block.Biome;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.arg.ARBiome;
-import com.massivecraft.massivecore.cmd.arg.ARNullable;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.type.TypeBiome;
+import com.massivecraft.massivecore.cmd.type.TypeNullable;
 
 public class CmdBiomeConvert extends MassiveBiomesCommand
 {
@@ -20,9 +20,9 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 		// Aliases
 		this.addAliases("convert");
 		
-		// Args
-		this.addArg(ARNullable.get(ARBiome.get(), "all"), "fromId|all");
-		this.addArg(ARBiome.get(), "toId");
+		// Parameters
+		this.addParameter(TypeNullable.get(TypeBiome.get(), "all"), "fromId|all");
+		this.addParameter(TypeBiome.get(), "toId");
 		
 		// Requirements
 		this.addRequirements(new ReqHasPerm(Perm.CONVERT.node));

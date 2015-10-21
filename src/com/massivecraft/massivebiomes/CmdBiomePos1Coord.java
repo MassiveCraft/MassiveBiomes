@@ -1,9 +1,9 @@
 package com.massivecraft.massivebiomes;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.arg.ARInteger;
 import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
 import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.cmd.type.TypeInteger;
 
 public class CmdBiomePos1Coord extends MassiveBiomesCommand
 {
@@ -16,9 +16,9 @@ public class CmdBiomePos1Coord extends MassiveBiomesCommand
 		// Aliases
 		this.addAliases("coord");
 		
-		// Args
-		this.addArg(ARInteger.get(), "X");
-		this.addArg(ARInteger.get(), "Z");
+		// Parameters
+		this.addParameter(TypeInteger.get(), "X");
+		this.addParameter(TypeInteger.get(), "Z");
 		
 		// Requirements
 		this.addRequirements(new ReqHasPerm(Perm.POS1_COORD.node));

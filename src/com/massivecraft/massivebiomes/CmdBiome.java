@@ -22,13 +22,13 @@ public class CmdBiome extends MassiveBiomesCommand
 	
 	public CmdBiome()
 	{
-		// SubCommands
-		this.addSubCommand(this.cmdBiomeHere);
-		this.addSubCommand(this.cmdBiomeList);
-		this.addSubCommand(this.cmdBiomePos1);
-		this.addSubCommand(this.cmdBiomePos2);
-		this.addSubCommand(this.cmdBiomeConvert);
-		this.addSubCommand(this.cmdBiomeVersion);
+		// Children
+		this.addChild(this.cmdBiomeHere);
+		this.addChild(this.cmdBiomeList);
+		this.addChild(this.cmdBiomePos1);
+		this.addChild(this.cmdBiomePos2);
+		this.addChild(this.cmdBiomeConvert);
+		this.addChild(this.cmdBiomeVersion);
 		
 		// Aliases
 		this.addAliases("biome");

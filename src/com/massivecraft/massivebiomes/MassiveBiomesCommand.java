@@ -15,15 +15,9 @@ public abstract class MassiveBiomesCommand extends MassiveCommand
 	// -------------------------------------------- //
 	
 	@Override
-	public void fixSenderVars()
+	public void senderFields(boolean set)
 	{
-		this.mme = MPlayerColl.get().get(this.sender);
-	}
-	
-	@Override
-	public void unsetSenderVars()
-	{
-		this.mme = null;
+		this.mme = set ? MPlayerColl.get().get(this.sender) : null;
 	}
 	
 }

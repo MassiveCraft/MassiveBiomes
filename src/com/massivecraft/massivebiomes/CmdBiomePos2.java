@@ -20,9 +20,9 @@ public class CmdBiomePos2 extends MassiveBiomesCommand
 	
 	public CmdBiomePos2()
 	{
-		// SubCommands
-		this.addSubCommand(new CmdBiomePos2Here());
-		this.addSubCommand(new CmdBiomePos2Coord());
+		// Children
+		this.addChild(new CmdBiomePos2Here());
+		this.addChild(new CmdBiomePos2Coord());
 		
 		// Aliases
 		this.addAliases("2", "p2", "pos2");
