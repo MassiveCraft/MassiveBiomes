@@ -1,7 +1,7 @@
 package com.massivecraft.massivebiomes;
 
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
-import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 
 public class CmdBiomePos1Here extends MassiveBiomesCommand
 {
@@ -15,8 +15,8 @@ public class CmdBiomePos1Here extends MassiveBiomesCommand
 		this.addAliases("here");
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.POS1_HERE.node));
-		this.addRequirements(ReqIsPlayer.get());
+		this.addRequirements(new RequirementHasPerm(Perm.POS1_HERE.node));
+		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
 	// -------------------------------------------- //

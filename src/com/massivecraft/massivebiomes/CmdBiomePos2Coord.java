@@ -1,9 +1,9 @@
 package com.massivecraft.massivebiomes;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
-import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
-import com.massivecraft.massivecore.cmd.type.TypeInteger;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
+import com.massivecraft.massivecore.command.type.primitive.TypeInteger;
 
 public class CmdBiomePos2Coord extends MassiveBiomesCommand
 {
@@ -21,8 +21,8 @@ public class CmdBiomePos2Coord extends MassiveBiomesCommand
 		this.addParameter(TypeInteger.get(), "Z");
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.POS2_COORD.node));
-		this.addRequirements(ReqIsPlayer.get());
+		this.addRequirements(new RequirementHasPerm(Perm.POS2_COORD.node));
+		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
 	// -------------------------------------------- //

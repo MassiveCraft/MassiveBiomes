@@ -4,10 +4,10 @@ import org.bukkit.World;
 import org.bukkit.block.Biome;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
-import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
-import com.massivecraft.massivecore.cmd.type.TypeBiome;
-import com.massivecraft.massivecore.cmd.type.TypeNullable;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
+import com.massivecraft.massivecore.command.type.TypeNullable;
+import com.massivecraft.massivecore.command.type.enumeration.TypeBiome;
 
 public class CmdBiomeConvert extends MassiveBiomesCommand
 {
@@ -25,8 +25,8 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 		this.addParameter(TypeBiome.get(), "toId");
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.CONVERT.node));
-		this.addRequirements(ReqIsPlayer.get());
+		this.addRequirements(new RequirementHasPerm(Perm.CONVERT.node));
+		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
 	// -------------------------------------------- //

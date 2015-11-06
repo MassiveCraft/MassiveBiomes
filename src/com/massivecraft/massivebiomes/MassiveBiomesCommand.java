@@ -1,6 +1,6 @@
 package com.massivecraft.massivebiomes;
 
-import com.massivecraft.massivecore.cmd.MassiveCommand;
+import com.massivecraft.massivecore.command.MassiveCommand;
 
 public abstract class MassiveBiomesCommand extends MassiveCommand
 {

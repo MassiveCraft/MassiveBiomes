@@ -1,7 +1,7 @@
 package com.massivecraft.massivebiomes;
 
-import com.massivecraft.massivecore.cmd.VersionCommand;
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.command.VersionCommand;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 
 public class CmdBiome extends MassiveBiomesCommand
 {
@@ -34,7 +34,7 @@ public class CmdBiome extends MassiveBiomesCommand
 		this.addAliases("biome");
 		
 		// Requirements
-		this.addRequirements(ReqHasPerm.get(Perm.BASECOMMAND.node));
+		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND.node));
 	}
 
 }

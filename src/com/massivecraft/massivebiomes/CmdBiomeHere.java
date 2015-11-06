@@ -4,8 +4,8 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
 
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
-import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 
 public class CmdBiomeHere extends MassiveBiomesCommand
 {
@@ -19,8 +19,8 @@ public class CmdBiomeHere extends MassiveBiomesCommand
 		this.addAliases("here");
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.HERE.node));
-		this.addRequirements(ReqIsPlayer.get());
+		this.addRequirements(new RequirementHasPerm(Perm.HERE.node));
+		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
 	// -------------------------------------------- //

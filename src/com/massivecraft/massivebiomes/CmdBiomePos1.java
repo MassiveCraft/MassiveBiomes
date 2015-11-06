@@ -3,8 +3,8 @@ package com.massivecraft.massivebiomes;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
-import com.massivecraft.massivecore.cmd.req.ReqIsPlayer;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 
 public class CmdBiomePos1 extends MassiveBiomesCommand
 {
@@ -28,8 +28,8 @@ public class CmdBiomePos1 extends MassiveBiomesCommand
 		this.addAliases("1", "p1", "pos1");
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.POS1.node));
-		this.addRequirements(ReqIsPlayer.get());
+		this.addRequirements(new RequirementHasPerm(Perm.POS1.node));
+		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
 	// -------------------------------------------- //

@@ -5,8 +5,8 @@ import java.util.Arrays;
 import org.bukkit.block.Biome;
 
 import com.massivecraft.massivecore.MassiveException;
-import com.massivecraft.massivecore.cmd.Parameter;
-import com.massivecraft.massivecore.cmd.req.ReqHasPerm;
+import com.massivecraft.massivecore.command.Parameter;
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivecore.pager.Pager;
 import com.massivecraft.massivecore.pager.Stringifier;
 import com.massivecraft.massivecore.util.Txt;
@@ -26,7 +26,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 		this.addParameter(Parameter.getPage());
 		
 		// Requirements
-		this.addRequirements(new ReqHasPerm(Perm.LIST.node));
+		this.addRequirements(new RequirementHasPerm(Perm.LIST.node));
 	}
 	
 	// -------------------------------------------- //
