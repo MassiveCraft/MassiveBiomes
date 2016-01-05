@@ -10,19 +10,19 @@ public class MPlayer extends SenderEntity<MPlayer>
 	
 	protected int x1 = 0;
 	public int getX1() { return this.x1; }
-	public void setX1(int val) { this.x1 = val; }
+	public void setX1(int val) { this.x1 = val; this.changed(); }
 	
 	protected int x2 = 0;
 	public int getX2() { return this.x2; }
-	public void setX2(int val) { this.x2 = val; }
+	public void setX2(int val) { this.x2 = val; this.changed(); }
 	
 	protected int z1 = 0;
 	public int getZ1() { return this.z1; }
-	public void setZ1(int val) { this.z1 = val; }
+	public void setZ1(int val) { this.z1 = val; this.changed(); }
 	
 	protected int z2 = 0;
 	public int getZ2() { return this.z2; }
-	public void setZ2(int val) { this.z2 = val; }
+	public void setZ2(int val) { this.z2 = val; this.changed(); }
 	
 	// MINMAX
 	public int getXMin() { return Math.min(x1, x2); }
