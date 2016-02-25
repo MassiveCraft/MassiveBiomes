@@ -6,6 +6,13 @@ import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 public class CmdBiome extends MassiveBiomesCommand
 {
 	// -------------------------------------------- //
+	// INSTANCE
+	// -------------------------------------------- //
+	
+	private static CmdBiome i = new CmdBiome();
+	public static CmdBiome get() { return i; }
+	
+	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //
 	

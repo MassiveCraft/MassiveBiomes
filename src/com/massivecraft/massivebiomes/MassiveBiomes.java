@@ -13,29 +13,20 @@ public class MassiveBiomes extends MassivePlugin
 	public MassiveBiomes() { MassiveBiomes.i = this; }
     
 	// -------------------------------------------- //
-	// FIELDS
-	// -------------------------------------------- //
-    
-	// Commands
-	public CmdBiome cmdBiome;
-	
-	// -------------------------------------------- //
 	// OVERRIDE
 	// -------------------------------------------- //
 	
 	@Override
-	public void onEnable()
+	public void onEnableInner()
 	{
-		if ( ! preEnable()) return;
+		// Activate
+		this.activate(
+			// Coll
+			MPlayerColl.get(),
 		
-		// Collections
-		MPlayerColl.get().init();
-		
-		// Commands
-		this.cmdBiome = new CmdBiome();
-		this.cmdBiome.register(this);
-		
-		postEnable();
+			// Command
+			CmdBiome.get()
+		);
 	}
 	
 }
