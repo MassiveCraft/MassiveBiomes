@@ -1,6 +1,6 @@
 package com.massivecraft.massivebiomes;
 
-import com.massivecraft.massivecore.command.VersionCommand;
+import com.massivecraft.massivecore.command.MassiveCommandVersion;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 
 public class CmdBiome extends MassiveBiomesCommand
@@ -21,7 +21,7 @@ public class CmdBiome extends MassiveBiomesCommand
 	public CmdBiomePos1 cmdBiomePos1 = new CmdBiomePos1();
 	public CmdBiomePos2 cmdBiomePos2 = new CmdBiomePos2();
 	public CmdBiomeConvert cmdBiomeConvert = new CmdBiomeConvert();
-	public VersionCommand cmdBiomeVersion = new VersionCommand(MassiveBiomes.get(), Perm.VERSION.node, "v", "version");
+	public MassiveCommandVersion cmdBiomeVersion = new MassiveCommandVersion(MassiveBiomes.get(), Perm.VERSION.node, "v", "version");
 	
 	// -------------------------------------------- //
 	// CONSTRUCT
