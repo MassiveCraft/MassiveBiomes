@@ -22,10 +22,10 @@ public class MassiveBiomes extends MassivePlugin
 		// Activate
 		this.activate(
 			// Coll
-			MPlayerColl.get(),
+			MPlayerColl.class,
 		
 			// Command
-			CmdBiome.get()
+			CmdBiome.class
 		);
 	}
 	
