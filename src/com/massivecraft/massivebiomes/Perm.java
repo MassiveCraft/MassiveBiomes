@@ -2,25 +2,26 @@ package com.massivecraft.massivebiomes;
 
 import org.bukkit.command.CommandSender;
 
+import com.massivecraft.massivecore.Identified;
 import com.massivecraft.massivecore.util.PermissionUtil;
 
-public enum Perm
+public enum Perm implements Identified
 {
 	// -------------------------------------------- //
 	// ENUM
 	// -------------------------------------------- //
 	
-	BASECOMMAND("basecommand"),
-	HERE("here"),
-	LIST("list"),
-	POS1("pos1"),
-	POS1_HERE("pos1.here"),
-	POS1_COORD("pos1.coord"),
-	POS2("pos2"),
-	POS2_HERE("pos2.here"),
-	POS2_COORD("pos2.coord"),
-	CONVERT("convert"),
-	VERSION("version"),
+	BASECOMMAND,
+	HERE,
+	LIST,
+	POS1,
+	POS1_HERE,
+	POS1_COORD,
+	POS2,
+	POS2_HERE,
+	POS2_COORD,
+	CONVERT,
+	VERSION,
 	
 	// END OF LIST
 	;
@@ -29,15 +30,16 @@ public enum Perm
 	// FIELDS
 	// -------------------------------------------- //
 	
-	public final String node;
+	public final String id;
+	@Override public String getId() { return this.id; }
 	
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
 	
-	Perm(final String node)
+	Perm()
 	{
-		this.node = "massivebiomes."+node;
+		this.id = PermissionUtil.createPermissionId(MassiveBiomes.get(), this);
     }
 	
 	// -------------------------------------------- //
@@ -46,7 +48,7 @@ public enum Perm
 	
 	public boolean has(CommandSender sender, boolean informSenderIfNot)
 	{
-		return PermissionUtil.hasPermission(sender, this.node, informSenderIfNot);
+		return PermissionUtil.hasPermission(sender, this.id, informSenderIfNot);
 	}
 	
 	public boolean has(CommandSender sender)

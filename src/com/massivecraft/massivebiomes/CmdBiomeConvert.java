@@ -25,7 +25,7 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 		this.addParameter(TypeBiome.get(), "toId");
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.CONVERT.node));
+		this.addRequirements(new RequirementHasPerm(Perm.CONVERT.id));
 		this.addRequirements(RequirementIsPlayer.get());
 	}
 	

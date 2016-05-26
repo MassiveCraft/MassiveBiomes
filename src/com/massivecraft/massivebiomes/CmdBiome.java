@@ -21,7 +21,7 @@ public class CmdBiome extends MassiveBiomesCommand
 	public CmdBiomePos1 cmdBiomePos1 = new CmdBiomePos1();
 	public CmdBiomePos2 cmdBiomePos2 = new CmdBiomePos2();
 	public CmdBiomeConvert cmdBiomeConvert = new CmdBiomeConvert();
-	public MassiveCommandVersion cmdBiomeVersion = new MassiveCommandVersion(MassiveBiomes.get(), Perm.VERSION.node, "v", "version");
+	public MassiveCommandVersion cmdBiomeVersion = new MassiveCommandVersion(MassiveBiomes.get()).addAliases("v", "version").addRequirements(RequirementHasPerm.get(Perm.VERSION));
 	
 	// -------------------------------------------- //
 	// CONSTRUCT
@@ -41,7 +41,7 @@ public class CmdBiome extends MassiveBiomesCommand
 		this.addAliases("biome");
 		
 		// Requirements
-		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND.node));
+		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND.id));
 	}
 
 }

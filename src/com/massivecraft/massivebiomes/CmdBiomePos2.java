@@ -28,7 +28,7 @@ public class CmdBiomePos2 extends MassiveBiomesCommand
 		this.addAliases("2", "p2", "pos2");
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.POS2.node));
+		this.addRequirements(new RequirementHasPerm(Perm.POS2.id));
 		this.addRequirements(RequirementIsPlayer.get());
 	}
 	

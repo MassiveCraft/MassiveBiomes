@@ -26,7 +26,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 		this.addParameter(Parameter.getPage());
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.LIST.node));
+		this.addRequirements(new RequirementHasPerm(Perm.LIST.id));
 	}
 	
 	// -------------------------------------------- //

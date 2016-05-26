@@ -21,7 +21,7 @@ public class CmdBiomePos2Coord extends MassiveBiomesCommand
 		this.addParameter(TypeInteger.get(), "Z");
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.POS2_COORD.node));
+		this.addRequirements(new RequirementHasPerm(Perm.POS2_COORD.id));
 		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
