@@ -15,7 +15,7 @@ public class CmdBiomePos2Here extends MassiveBiomesCommand
 		this.addAliases("here");
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.POS2_HERE.id));
+		this.addRequirements(new RequirementHasPerm(Perm.POS2_HERE));
 		this.addRequirements(RequirementIsPlayer.get());
 	}
 	

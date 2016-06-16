@@ -41,7 +41,7 @@ public class CmdBiome extends MassiveBiomesCommand
 		this.addAliases("biome");
 		
 		// Requirements
-		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND.id));
+		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND));
 	}
 
 }

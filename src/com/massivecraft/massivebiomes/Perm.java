@@ -1,6 +1,6 @@
 package com.massivecraft.massivebiomes;
 
-import org.bukkit.command.CommandSender;
+import org.bukkit.permissions.Permissible;
 
 import com.massivecraft.massivecore.Identified;
 import com.massivecraft.massivecore.util.PermissionUtil;
@@ -30,7 +30,7 @@ public enum Perm implements Identified
 	// FIELDS
 	// -------------------------------------------- //
 	
-	public final String id;
+	private final String id;
 	@Override public String getId() { return this.id; }
 	
 	// -------------------------------------------- //
@@ -46,14 +46,14 @@ public enum Perm implements Identified
 	// HAS
 	// -------------------------------------------- //
 	
-	public boolean has(CommandSender sender, boolean informSenderIfNot)
+	public boolean has(Permissible permissible, boolean verboose)
 	{
-		return PermissionUtil.hasPermission(sender, this.id, informSenderIfNot);
+		return PermissionUtil.hasPermission(permissible, this, verboose);
 	}
 	
-	public boolean has(CommandSender sender)
+	public boolean has(Permissible permissible)
 	{
-		return has(sender, false);
+		return PermissionUtil.hasPermission(permissible, this);
 	}
 	
 }
