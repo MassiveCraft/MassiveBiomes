@@ -40,7 +40,7 @@ public enum Perm implements Identified
 	Perm()
 	{
 		this.id = PermissionUtil.createPermissionId(MassiveBiomes.get(), this);
-    }
+	}
 	
 	// -------------------------------------------- //
 	// HAS

@@ -11,7 +11,7 @@ public class MassiveBiomes extends MassivePlugin
 	private static MassiveBiomes i;
 	public static MassiveBiomes get() { return i; }
 	public MassiveBiomes() { MassiveBiomes.i = this; }
-    
+	
 	// -------------------------------------------- //
 	// OVERRIDE
 	// -------------------------------------------- //
