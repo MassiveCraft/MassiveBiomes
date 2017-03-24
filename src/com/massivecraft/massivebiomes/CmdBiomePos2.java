@@ -39,7 +39,7 @@ public class CmdBiomePos2 extends MassiveBiomesCommand
 	@Override
 	public List<String> getHelp()
 	{
-		List<String> ret = new ArrayList<String>(2);
+		List<String> ret = new ArrayList<>(2);
 		ret.add(FIRST_HELP_LINE);
 		ret.add("<i>Currently <k>X<v>"+mme.x2+" <k>Z<v>"+mme.z2);
 		return ret;

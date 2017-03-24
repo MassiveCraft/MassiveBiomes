@@ -39,7 +39,7 @@ public class CmdBiomeList extends MassiveBiomesCommand
 		int page = this.readArg();
 		
 		// Pager Create
-		Pager<Biome> pager = new Pager<Biome>(this, "Biome List", page, Arrays.asList(Biome.values()), new Stringifier<Biome>()
+		Pager<Biome> pager = new Pager<>(this, "Biome List", page, Arrays.asList(Biome.values()), new Stringifier<Biome>()
 		{
 			@Override
 			public String toString(Biome biome, int index)
