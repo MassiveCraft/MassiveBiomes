@@ -1,10 +1,10 @@
 package com.massivecraft.massivebiomes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CmdBiomePos1 extends MassiveBiomesCommand
 {

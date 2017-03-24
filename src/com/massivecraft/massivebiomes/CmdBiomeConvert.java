@@ -1,13 +1,12 @@
 package com.massivecraft.massivebiomes;
 
-import org.bukkit.World;
-import org.bukkit.block.Biome;
-
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 import com.massivecraft.massivecore.command.type.TypeNullable;
 import com.massivecraft.massivecore.command.type.enumeration.TypeBiome;
+import org.bukkit.World;
+import org.bukkit.block.Biome;
 
 public class CmdBiomeConvert extends MassiveBiomesCommand
 {

@@ -1,11 +1,10 @@
 package com.massivecraft.massivebiomes;
 
+import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
-
-import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
-import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
 
 public class CmdBiomeHere extends MassiveBiomesCommand
 {

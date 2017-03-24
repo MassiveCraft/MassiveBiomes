@@ -1,15 +1,14 @@
 package com.massivecraft.massivebiomes;
 
-import java.util.Arrays;
-
-import org.bukkit.block.Biome;
-
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.command.Parameter;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivecore.pager.Pager;
 import com.massivecraft.massivecore.pager.Stringifier;
 import com.massivecraft.massivecore.util.Txt;
+import org.bukkit.block.Biome;
+
+import java.util.Arrays;
 
 public class CmdBiomeList extends MassiveBiomesCommand
 {
