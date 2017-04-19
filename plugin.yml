@@ -12,13 +12,11 @@ permissions:
   massivebiomes.basecommand: {description: use MassiveBiomes, default: false}
   massivebiomes.here: {description: check in what biome you stand, default: false}
   massivebiomes.list: {description: list all available biomes, default: false}
-  massivebiomes.pos1: {description: manage pos1, default: false}
-  massivebiomes.pos1.here: {description: set pos1 to where you stand, default: false}
-  massivebiomes.pos1.coord: {description: set pos1 to a coord, default: false}
-  massivebiomes.pos2: {description: manage pos2, default: false}
-  massivebiomes.pos2.here: {description: set pos2 to where you stand, default: false}
-  massivebiomes.pos2.coord: {description: set pos2 to a coord, default: false}
+  massivebiomes.pos: {description: manage positions, default: false}
+  massivebiomes.pos.here: {description: set a position to where you stand, default: false}
+  massivebiomes.pos.coord: {description: set a position to a coord, default: false}
   massivebiomes.convert: {description: convert from all or a specific biome to a specific biome, default: false}
+  massivebiomes.config: {description: edit configuration, default: false}
   massivebiomes.version: {description: show plugin version, default: false}
 # -------------------------------------------- #
 # STAR NOTATION
@@ -29,13 +27,11 @@ permissions:
       massivebiomes.basecommand: true
       massivebiomes.here: true
       massivebiomes.list: true
-      massivebiomes.pos1: true
-      massivebiomes.pos1.here: true
-      massivebiomes.pos1.coord: true
-      massivebiomes.pos2: true
-      massivebiomes.pos2.here: true
-      massivebiomes.pos2.coord: true
+      massivebiomes.pos: true
+      massivebiomes.pos.here: true
+      massivebiomes.pos.coord: true
       massivebiomes.convert: true
+      massivebiomes.config: true
       massivebiomes.version: true
 # -------------------------------------------- #
 # KITS
@@ -48,13 +44,11 @@ permissions:
     default: false
     children:
       massivebiomes.kit.rank2: true
-      massivebiomes.pos1: true
-      massivebiomes.pos1.here: true
-      massivebiomes.pos1.coord: true
-      massivebiomes.pos2: true
-      massivebiomes.pos2.here: true
-      massivebiomes.pos2.coord: true
+      massivebiomes.pos: true
+      massivebiomes.pos.here: true
+      massivebiomes.pos.coord: true
       massivebiomes.convert: true
+      massivebiomes.config: true
   massivebiomes.kit.rank2:
     default: false
     children:

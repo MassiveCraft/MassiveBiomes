@@ -1,5 +1,8 @@
-package com.massivecraft.massivebiomes;
+package com.massivecraft.massivebiomes.cmd;
 
+import com.massivecraft.massivebiomes.Lang;
+import com.massivecraft.massivebiomes.Perm;
+import com.massivecraft.massivebiomes.entity.MConf;
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
 import com.massivecraft.massivecore.command.requirement.RequirementIsPlayer;
@@ -7,6 +10,8 @@ import com.massivecraft.massivecore.command.type.TypeNullable;
 import com.massivecraft.massivecore.command.type.enumeration.TypeBiome;
 import org.bukkit.World;
 import org.bukkit.block.Biome;
+
+import java.util.List;
 
 public class CmdBiomeConvert extends MassiveBiomesCommand
 {
@@ -16,15 +21,12 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 	
 	public CmdBiomeConvert()
 	{
-		// Aliases
-		this.addAliases("convert");
-		
 		// Parameters
 		this.addParameter(TypeNullable.get(TypeBiome.get(), "all"), "fromId|all");
 		this.addParameter(TypeBiome.get(), "toId");
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.CONVERT));
+		this.addRequirements(RequirementHasPerm.get(Perm.CONVERT));
 		this.addRequirements(RequirementIsPlayer.get());
 	}
 	
@@ -33,13 +35,20 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 	// -------------------------------------------- //
 	
 	@Override
+	public List<String> getAliases()
+	{
+		return MConf.get().aliasesBiomeConvert;
+	}
+	
+	@Override
 	public void perform() throws MassiveException
 	{
+		// Parameters
 		World world = me.getWorld();
-		
 		Biome from = this.readArg();
 		Biome to = this.readArg();
 		
+		// Get the min and max values of the region
 		int xmin = mme.getXMin();
 		int xmax = mme.getXMax();
 		int zmin = mme.getZMin();
@@ -47,24 +56,20 @@ public class CmdBiomeConvert extends MassiveBiomesCommand
 		
 		int area = (xmax - xmin + 1) * (zmax - zmin + 1);
 		
-		msg("<i>Now converting <h>" + area + " coords to <h>" + to + "<i>.");
+		boolean fromAll = from == null;
 		
+		// Convert
 		for (int x = xmin; x <= xmax; x++)
 		{
 			for (int z = zmin; z <= zmax; z++)
 			{
-				if (from != null)
-				{
-					Biome biomeHere = world.getBiome(x, z);
-					if (biomeHere != from)
-					{
-						continue;
-					}
-				}
+				if (!fromAll && world.getBiome(x, z) != from) continue;
 				world.setBiome(x, z, to);
 			}
 		}
-		msg("<i>DONE");
+		
+		// Inform
+		msg(Lang.CONVERTED_X_COORDS_TO_Y_BIOME, area, to);
 	}
 	
 }

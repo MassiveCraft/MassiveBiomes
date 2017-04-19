@@ -13,13 +13,11 @@ public enum Perm implements Identified
 	BASECOMMAND,
 	HERE,
 	LIST,
-	POS1,
-	POS1_HERE,
-	POS1_COORD,
-	POS2,
-	POS2_HERE,
-	POS2_COORD,
+	POS,
+	POS_HERE,
+	POS_COORD,
 	CONVERT,
+	CONFIG,
 	VERSION,
 	
 	// END OF LIST

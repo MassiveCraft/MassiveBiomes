@@ -1,5 +1,8 @@
 package com.massivecraft.massivebiomes;
 
+import com.massivecraft.massivebiomes.cmd.CmdBiome;
+import com.massivecraft.massivebiomes.entity.MConfColl;
+import com.massivecraft.massivebiomes.entity.MPlayerColl;
 import com.massivecraft.massivecore.MassivePlugin;
 
 public class MassiveBiomes extends MassivePlugin
@@ -23,6 +26,7 @@ public class MassiveBiomes extends MassivePlugin
 		this.activate(
 			// Coll
 			MPlayerColl.class,
+			MConfColl.class,
 		
 			// Command
 			CmdBiome.class
