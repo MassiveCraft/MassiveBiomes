@@ -1,5 +1,8 @@
-package com.massivecraft.massivebiomes;
+package com.massivecraft.massivebiomes.cmd;
 
+import com.massivecraft.massivebiomes.Lang;
+import com.massivecraft.massivebiomes.Perm;
+import com.massivecraft.massivebiomes.entity.MConf;
 import com.massivecraft.massivecore.MassiveException;
 import com.massivecraft.massivecore.command.Parameter;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
@@ -9,6 +12,7 @@ import com.massivecraft.massivecore.util.Txt;
 import org.bukkit.block.Biome;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class CmdBiomeList extends MassiveBiomesCommand
 {
@@ -18,14 +22,11 @@ public class CmdBiomeList extends MassiveBiomesCommand
 	
 	public CmdBiomeList()
 	{
-		// Aliases
-		this.addAliases("list");
-		
 		// Parameters
 		this.addParameter(Parameter.getPage());
 		
 		// Requirements
-		this.addRequirements(new RequirementHasPerm(Perm.LIST));
+		this.addRequirements(RequirementHasPerm.get(Perm.LIST));
 	}
 	
 	// -------------------------------------------- //
@@ -33,20 +34,26 @@ public class CmdBiomeList extends MassiveBiomesCommand
 	// -------------------------------------------- //
 	
 	@Override
+	public List<String> getAliases()
+	{
+		return MConf.get().aliasesBiomeList;
+	}
+	
+	@Override
 	public void perform() throws MassiveException
 	{
-		// Args
+		// Parameters
 		int page = this.readArg();
 		
 		// Pager Create
-		Pager<Biome> pager = new Pager<>(this, "Biome List", page, Arrays.asList(Biome.values()), new Stringifier<Biome>()
+		Pager<Biome> pager = new Pager<>(this, Lang.BIOME_LIST_TITLE, page, Arrays.asList(Biome.values()), new Stringifier<Biome>()
 		{
 			@Override
 			public String toString(Biome biome, int index)
 			{
 				Integer id = biome.ordinal();
-				String name = biome.toString();
-				return Txt.parse("<k>%d <v>%s", id, name);
+				String name = Txt.getNicedEnum(biome);
+				return Txt.parse(Lang.BIOME_LIST_ENTRY, id, name);
 			}
 		});
 		

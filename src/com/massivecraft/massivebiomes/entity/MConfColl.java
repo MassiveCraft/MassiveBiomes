@@ -1,16 +1,17 @@
-package com.massivecraft.massivebiomes;
+package com.massivecraft.massivebiomes.entity;
 
-import com.massivecraft.massivecore.store.SenderColl;
+import com.massivecraft.massivecore.MassiveCore;
+import com.massivecraft.massivecore.store.Coll;
 
-public class MPlayerColl extends SenderColl<MPlayer>
+public class MConfColl extends Coll<MConf>
 {
 	// -------------------------------------------- //
 	// INSTANCE & CONSTRUCT
 	// -------------------------------------------- //
 	
-	private static MPlayerColl i = new MPlayerColl();
-	public static MPlayerColl get() { return i; }
-
+	private static MConfColl i = new MConfColl();
+	public static MConfColl get() { return i; }
+	
 	// -------------------------------------------- //
 	// STACK TRACEABILITY
 	// -------------------------------------------- //
@@ -24,12 +25,13 @@ public class MPlayerColl extends SenderColl<MPlayer>
 	// -------------------------------------------- //
 	// OVERRIDE
 	// -------------------------------------------- //
-
+	
 	@Override
-	public boolean isDefault(MPlayer entity)
+	public void setActive(boolean active)
 	{
-		// always default => never save
-		return true;
+		super.setActive(active);
+		if (!active) return;
+		MConf.i = this.get(MassiveCore.INSTANCE, true);
 	}
 	
 }

@@ -1,7 +1,10 @@
-package com.massivecraft.massivebiomes;
+package com.massivecraft.massivebiomes.cmd;
 
-import com.massivecraft.massivecore.command.MassiveCommandVersion;
+import com.massivecraft.massivebiomes.Perm;
+import com.massivecraft.massivebiomes.entity.MConf;
 import com.massivecraft.massivecore.command.requirement.RequirementHasPerm;
+
+import java.util.List;
 
 public class CmdBiome extends MassiveBiomesCommand
 {
@@ -21,7 +24,8 @@ public class CmdBiome extends MassiveBiomesCommand
 	public CmdBiomePos1 cmdBiomePos1 = new CmdBiomePos1();
 	public CmdBiomePos2 cmdBiomePos2 = new CmdBiomePos2();
 	public CmdBiomeConvert cmdBiomeConvert = new CmdBiomeConvert();
-	public MassiveCommandVersion cmdBiomeVersion = new MassiveCommandVersion(MassiveBiomes.get()).addAliases("v", "version").addRequirements(RequirementHasPerm.get(Perm.VERSION));
+	public CmdBiomeConfig cmdBiomeConfig = new CmdBiomeConfig();
+	public CmdBiomeVersion cmdBiomeVersion = new CmdBiomeVersion();
 	
 	// -------------------------------------------- //
 	// CONSTRUCT
@@ -35,13 +39,21 @@ public class CmdBiome extends MassiveBiomesCommand
 		this.addChild(this.cmdBiomePos1);
 		this.addChild(this.cmdBiomePos2);
 		this.addChild(this.cmdBiomeConvert);
+		this.addChild(this.cmdBiomeConfig);
 		this.addChild(this.cmdBiomeVersion);
-		
-		// Aliases
-		this.addAliases("biome");
 		
 		// Requirements
 		this.addRequirements(RequirementHasPerm.get(Perm.BASECOMMAND));
+	}
+	
+	// -------------------------------------------- //
+	// OVERRIDE
+	// -------------------------------------------- //
+	
+	@Override
+	public List<String> getAliases()
+	{
+		return MConf.get().aliasesBiome;
 	}
 
 }
