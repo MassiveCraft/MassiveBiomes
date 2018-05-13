@@ -25,20 +25,36 @@ public class MPlayer extends SenderEntity<MPlayer>
 	
 	protected int x1 = 0;
 	public int getX1() { return this.x1; }
-	public void setX1(int val) { this.x1 = val; this.changed(); }
-	
+	public void setX1(int val)
+	{
+		this.changed(this.x1, val);
+		this.x1 = val;
+	}
+
 	protected int x2 = 0;
 	public int getX2() { return this.x2; }
-	public void setX2(int val) { this.x2 = val; this.changed(); }
-	
+	public void setX2(int val)
+	{
+		this.changed(this.x2, val);
+		this.x2 = val;
+	}
+
 	protected int z1 = 0;
 	public int getZ1() { return this.z1; }
-	public void setZ1(int val) { this.z1 = val; this.changed(); }
-	
+	public void setZ1(int val)
+	{
+		this.changed(this.z1, val);
+		this.z1 = val;
+	}
+
 	protected int z2 = 0;
 	public int getZ2() { return this.z2; }
-	public void setZ2(int val) { this.z2 = val; this.changed(); }
-	
+	public void setZ2(int val)
+	{
+		this.changed(this.z2, val);
+		this.z2 = val;
+	}
+
 	public void setX(int val, SelectionPosition selectionPosition)
 	{
 		if (selectionPosition == FIRST) this.x1 = val;
